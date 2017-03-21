@@ -1,1 +1,37 @@
 // General styles
+body {
+	font-family: $main-font;
+	font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $titles-font;
+}
+
+.dark-section {
+	h1, h2, h3, h4, h5, h6, p {
+		color: $white;
+	}
+}
+
+p {
+	font-size: 14px;
+}
+
+.btn {
+	display: inline-block;
+	font-family: $main-font;
+	font-size: 16px;
+	text-transform: uppercase;
+	border-radius: 3px;
+	border: none;
+	padding: 20px 40px;
+	&--white {
+		background-color: $white;
+		color: $main-color;
+	}
+}
+
+a {
+	color: $main-color;
+}
