@@ -1,5 +1,19 @@
 {% extends "layout.html" %}
 {% set page_title = "Home page" %}
 {% block content %}
-<h1>Hello! I'm home page of your website.</h1>
+<header class="main-header">
+	<a href="#" class="logo">
+		<img src="images/logo.png" alt="">
+	</a>
+</header>
+<section class="header-banner dark-section">
+	<div class="header-banner__titles">
+		<p class="header-banner__suptitle">We are</p>
+		<h1 class="header-banner__title">Ready For blueprint</h1>
+		<p class="header-banner__subtitle">WE CAN MAKE YOUR HOME BEAUTIFUL</p>
+		<a href="#" class="btn btn--white header-banner__btn">Our Works</a>
+	</div>
+	<button class="scroll-arrow"><i class="icon-down-open"></i></button>
+</section>
+<section class="divider"></section>
 {% endblock %}

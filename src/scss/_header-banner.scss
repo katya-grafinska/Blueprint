@@ -1,0 +1,75 @@
+.header-banner {
+	height: calc(100vh - 48px);
+	max-height: 900px;
+	background-image: url("../images/banner-bg.jpg");
+	background-position: center;
+	background-size: cover;
+	@include overlay(rgba(27, 124, 224, .7));
+	background-blend-mode: multiply;
+	background-color: rgba(27, 124, 224, 1);
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	@supports (background-blend-mode: multiply) {
+		&:before {
+			display: none;
+		}
+		> * {
+			z-index: 0;
+			position: static;
+		}
+	}
+	&__titles {
+		margin: auto;
+		text-align: center;
+	}
+	&__title {
+		margin-top: 13px;
+		margin-bottom: 5px;
+		line-height: 1;
+	}
+	&__suptitle,
+	&__subtitle {
+		@include font(28, null, null, 32);
+		text-transform: uppercase;
+		margin-top: 0;
+		margin-bottom: 0;
+		@include large-size {
+			font-size: 31px;
+		}
+	}
+	&__suptitle {
+		font-family: 'Exo', sans-serif;
+	}
+	&__btn {
+		margin-top: 35px;
+		@include medium-size {
+			margin-top: 55px;
+		}
+	}
+}
+
+.scroll-arrow {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin: auto;
+	border: none;
+	position: absolute;
+	background-color: $white;
+	bottom: -25px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #051741;
+	box-shadow: 0px 5px 18px 0px rgba(22, 99, 178, 0.3);
+	i {
+		display: inline-block;
+	}
+	&:hover,
+	&:focus {
+		outline: none;
+		i {
+			animation: pulse 2s infinite;
+		}
+	}
+}

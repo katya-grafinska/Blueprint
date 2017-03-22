@@ -3,6 +3,7 @@
 $main-color: #1b7ce0;
 $black: #111;
 $white: #fff;
+$text-color: #666;
 
 // fonts
 $lora: 'Lora', serif;
@@ -10,3 +11,14 @@ $raleway: 'Raleway', sans-serif;
 
 $main-font: $lora;
 $titles-font: $raleway;
+
+// Media Query Breakpoints
+$mobile-width: 480px;
+$tablet-width: 768px;
+$tablet-landscape-width: 1024px;
+$small-mobile: $mobile-width;
+
+$small: 639px;
+$medium: 40em;
+$xlarge: 1200px;
+$xxlarge: 1600px;

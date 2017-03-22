@@ -1,1 +1,79 @@
 // Sass mixins
+@mixin font($size, $color: null, $font-weight: null, $line-height:null, $letterspacing: null ) {
+	font-size: $size + px;
+	font-weight: $font-weight;
+	@if $letterspacing != null {
+		letter-spacing: ($letterspacing / 1000) + em;
+	}
+	color: $color;
+	@if $line-height != null {
+		line-height: ($line-height / $size);
+	}
+}
+
+@mixin overlay($overlay: rgba(216,30,5,.7)) {
+	position: relative;
+	&:before {
+		content: '';
+		background-color: $overlay;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+		opacity: 1;
+	}
+	> * {
+		z-index: 1;
+		position: relative;
+	}
+}
+
+@mixin small-mobile {
+	@media screen and (max-width: #{$small-mobile} - 1px) {
+		@content;
+	}
+}
+
+@mixin small-mobile-min {
+	@media screen and (min-width: #{$small-mobile}) {
+		@content;
+	}
+}
+
+@mixin small-size {
+	@media screen and (max-width: #{$small}) {
+		@content;
+	}
+}
+
+@mixin medium-size {
+	@media screen and (min-width: #{$medium}) {
+		@content;
+	}
+}
+
+@mixin large-size-max {
+	@media screen and (max-width: #{$tablet-landscape-width} - 1px) {
+		@content;
+	}
+}
+
+@mixin large-size {
+	@media screen and (min-width: #{$tablet-landscape-width}) {
+		@content;
+	}
+}
+
+@mixin xlarge-size {
+	@media screen and (min-width: #{$xlarge}) {
+		@content;
+	}
+}
+
+@mixin xxlarge-size {
+	@media screen and (min-width: #{$xxlarge}) {
+		@content;
+	}
+}
