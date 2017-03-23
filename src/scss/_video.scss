@@ -12,7 +12,6 @@
 		display: inline-flex;
 		width: 106px;
 		height: 106px;
-		margin: auto;
 		border-radius: 50%;
 		padding: 0;
 		background-color: $white;
@@ -35,6 +34,7 @@
 	margin: auto;
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
 	&__text {
 		@include font(12, $white, 500, null, 80);
 		font-family: $titles-font;
