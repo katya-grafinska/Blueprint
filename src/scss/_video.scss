@@ -111,6 +111,6 @@
 		font-family: $titles-font;
 		@include font(21, $black, 500, 31, 80);
 		text-align: center;
-		margin-top: 45px;
+		margin-top: 0;
 	}
 }

@@ -22,7 +22,7 @@ h2 {
 }
 
 h3 {
-	@include font(16, $black, 700, 48);
+	@include font(16, $black, 700, 32);
 	text-transform: uppercase;
 }
 
