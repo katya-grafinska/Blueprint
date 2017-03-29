@@ -54,6 +54,12 @@
 	}
 }
 
+@mixin tablet-size {
+	@media screen and (min-width: #{$tablet-width}) {
+		@content;
+	}
+}
+
 @mixin large-size-max {
 	@media screen and (max-width: #{$tablet-landscape-width} - 1px) {
 		@content;

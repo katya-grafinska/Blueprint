@@ -56,17 +56,8 @@
 		var thisButtonNext = '.swiper-button-next' + index;
 		var thisButtonPrev = '.swiper-button-prev' + index;
 
-		var isPostSlider = false;
-
-		if ($t.hasClass('post-slider')) {
-			$t.parent('.news-section').find('.swiper-button-next').addClass('swiper-button-next' + index);
-			$t.parent('.news-section').find('.swiper-button-prev').addClass('swiper-button-prev' + index);
-			isPostSlider = true;
-		}
-		else {
-			$t.find('.swiper-button-next').addClass('swiper-button-next' + index);
-			$t.find('.swiper-button-prev').addClass('swiper-button-prev' + index);
-		}
+		$t.siblings('.swiper-button-next').addClass('swiper-button-next' + index);
+		$t.siblings('.swiper-button-prev').addClass('swiper-button-prev' + index);
 		$t.find('.swiper-pagination').addClass('pagination-'+ sliderIndex);
 		$t.addClass(sliderIndex + ' initialized').attr('id', sliderIndex);
 
@@ -102,5 +93,26 @@
 			effect: slideEffect || 'slide'
 		});
 	});
+
+	/* BACKGROUND IMAGE */
+	function addImgBg(img_sel, parent_sel) {
+
+		if (!img_sel) {
+			console.info('no img selector');
+			return false;
+		}
+
+		var $parent, _this;
+
+		$(img_sel).each(function() {
+			_this = $(this);
+			$parent = _this.closest(parent_sel);
+			$parent = $parent.length ? $parent : _this.parent().addClass('js-back-switch');
+			$parent.css('background-image', 'url(' + this.src + ')');
+			_this.hide()
+		});
+	}
+
+	addImgBg('.js-img-switch', '.js-back-switch');
 
 })(jQuery, window, document);
